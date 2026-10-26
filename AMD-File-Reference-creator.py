@@ -5,20 +5,21 @@ import xml.etree.ElementTree as ET
 from soupsieve.util import lower
 
 # Open CSV File and store data in a variable
-CSV_FILE = "/Portico-Project/Amdigital/LAT_AM_HIST_US/reference/Latin_American_Histories_in_the_United_States_section_export_2025_10_23_08_44_27.csv"
+CSV_FILE = "/Portico-Project/Amdigital/EAST_INDIA_COMPANY_VIII/_East_India_Company__Module_8_section_export_2026_04_08_09_33_46.csv"
 CSV_Rows = open(CSV_FILE, 'r')
 
 # Output file
-XML_FILE = "/Portico-Project/Amdigital/LAT_AM_HIST_US/reference/Latin_American_Histories_in_the_United_States-mapping.xml"
+XML_FILE = "/Portico-Project/Amdigital/EAST_INDIA_COMPANY_VIII/_East_India_Company__Module_8-mapping.xml"
 output_file_location = open(XML_FILE,'wb')
 
 # Collection Name
-Collection_Name = 'Latin American Histories in the United States'
+Collection_Name = 'East India Company VIII: The Board of Commissioners: Reform and Religion'
 
 def update_folder_name_column(csv_file):
     '''This function will add folder name in the first column, if it is not provided. It will get the folder name from
     previous records and use it in those records where it is missing. Records should be continuous otherwise this function
     will not work.'''
+
     next(csv_file)
     csv_records_list = []
     folder_name = ''

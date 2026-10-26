@@ -72,6 +72,8 @@ class Ui:
                 self.entry_file_name_col_index.insert(0, jsom_data["folder_name_column_index"])
         except JSONDecodeError as error:
             pass
+        except FileNotFoundError:
+            pass
 
     def validate_coll_name(self):
         collection_name = self.entry_collection_name.get()
